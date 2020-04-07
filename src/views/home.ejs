@@ -1,0 +1,54 @@
+<%- include ('./partials/Outheader') %>
+
+<div style="background-image: url('/task.jpg'), linear-gradient(rgb(138, 71, 201), rgb(138, 71, 201)); width: 100%; height: 30em; margin-top: 0; padding-top: 3em; background-position: center center; background-size: cover; background-blend-mode: overlay;">
+    <div class="card" style="width: 50%; margin: 2em auto 2em auto;">
+        <div class="card-body" style="padding-top: 3em; padding-bottom: 3em; text-align: center;">
+            <h1>Welcome to this simple task manager!</h1>
+            <p>
+            This app works in a pretty simple way. You just have to create an account and loggin, in order to create, edit and delete tasks. The porpouse of this app is to remind you if you have any pending tasks.
+            </p>
+            <a href="/api/register" class="btn btn-info">Sign Up</a>
+            <a href="/api/login" class="btn btn-info" style="background-color: lightseagreen;">Sign In</a>
+        </div>
+    </div>
+</div>
+
+<div style=" height: 30em; padding-top: .5em;">
+    
+    <div class="card" style="margin: .5em;">
+        <div class="card-body">
+            <h4>How to use the app?</h4>
+            <p>
+                As it was said before, the whole thing is quite simple. In order to create a task, you just have to add its name, its starting date, its deadline and its description.
+                Once you've done that the task will appear beside of the task creation pannel.
+            </p>
+        </div>
+    </div>
+    
+    <div class="card" style="margin: .5em;">
+        <div class="card-body">
+            <h4>What if I already finished a certain task?</h4>
+            <p>
+                Well, since the functionality of this app is quite simple (believe me, it'll get better with time) the best way to handle every task you've alredy finished is by deleting them. 
+            </p>
+        </div>
+    </div>
+    
+    <div class="card" style="margin: .5em; padding-bottom: .8em;">
+        <div class="card-body">
+            <h4>And... What if a deadline or something else change?</h4>
+            <p>
+                Then, you can click the modify button and change wherever you like about a certain task. Remember that this app is just some kind of a simple reminder.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<div style="background-color: black; height: 10em; text-align: center; color: white; padding-top: 3em;">
+    <h6 style="color: white;">Developed by Jorge Juarez</h6>
+    <p>I built this app in order to practice a little bit, so you may be able to find its repository at GitHub. This is my first full-stack app so don't be that rude. Hope you like it! </p>
+    <p>02/04/2020</p>
+</div>
+
+<%- include ('./partials/Outfooter') %>

@@ -1,0 +1,47 @@
+<%- include ('./partials/Outheader') %>
+
+<div class="form-wraper container mt-7">
+   <%if (error) {%>
+    <% for (var i = 0; i < error.length; i++) {%>
+    <div style="height: 43px; width: 70%; margin: .8px auto .8px auto; background-color: indianred; text-align: center; color: white; border-radius: 5px; text-align: center; font-size: .9em; justify-content: center; padding-bottom: 20px;><p><%= error[i] %></p></div>
+    <% } %>
+    <% } %>
+        <div class="card mt-3">
+            <div class="card-body">
+                <form action="/api/register" method="POST">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" placeholder="Add your username" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" placeholder="Add your email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" placeholder="Add your password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPass">Repeat your password</label>
+                        <input type="password" name="confirmPass" placeholder="Repeat password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">First name</label>
+                        <input type="text" name="firstName" placeholder="Add your first name " class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last name</label>
+                        <input type="text" name="lastName" placeholder="Add your last name" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-md btn-primary">
+                        Register
+                    </button>
+                    <a href="/api/home" class="btn btn-md btn-danger">
+                        Cancel
+                    </a>
+                </form>
+            </div>
+        </div>
+</div>
+
+<%- include('./partials/Outfooter') %>

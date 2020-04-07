@@ -1,0 +1,65 @@
+<%- include ('./partials/Innerheader') %>
+
+
+
+<div>
+    <div style=" margin-left: 0; display: flex; justify-content: space-around; height: 100%;">
+        <div style="display: flex; flex-direction: row;flex-wrap: wrap; justify-content: space-around; width: 70%; height: 800px; margin-left: 0; margin: 1.1em; padding-right: 3em; padding-left: 3em; ">
+            <% if (data) {%>
+                <% for (var i = 0; i < data.length; i++) { %> 
+                <div class="card mt-3" style="width: 22%; height: 24em; margin: .8em;">
+                    <div class="card-body">
+                        <label style="font-size: .9em;">Title</label>
+                        <h6><%= data[i].title %></h6>
+                        <label style="font-size: .9em;">Starting date</label>
+                        <h6> <%= data[i].startingDate %></h6>
+                        <label style="font-size: .9em;">Deadline</label>
+                        <h6><%= data[i].deadline %></h6>
+                        <label style="font-size: .9em;"> Description</label>
+                        <p style="font-size: .8em;"><%= data[i].description %></p>
+                        <form action="/api/deleteTask/<%= data[i].id %>" method="POST">
+                            <input type="hidden" name="" value="">
+                            <button class="btn btn-danger" type="submit" style="padding: .4em;">Delete</button>
+                        </form>
+                        <a href="/api/updateTask/<%= data[i].id %>" class="btn btn-info" style="padding: .3em;">Edit</a>
+                    </div>
+                </div>
+                <% } %>
+            <% } else { %>
+                <p>Yuppy, everything it's done! But you can add a task and fill this void!</p>
+            <% } %>
+        </div>
+    
+
+
+        <div style="padding-left: 3em; padding-right: 3em; width: 40%; margin-right: 3em; margin-top: 2em; ">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/api/tasks" method="POST">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" placeholder="Add the tittle of your task" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="startingDate">Starting date</label>
+                            <input type="text" name="startingDate" placeholder="When are going to start working on it?" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="deadline">Deadline</label>
+                            <input type="text" name="deadline" placeholder="Add your deadline" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea type="text" name="description" placeholder="Add the description of your task!" class="form-control"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Add Task
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ('./partials/Outfooter') %>

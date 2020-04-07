@@ -1,0 +1,32 @@
+<%- include ('./partials/Outheader') %>
+
+<div class="jumbotron form-wraper container mt-9">
+    <%if (locals.error_msg) {%>
+        <% for (var i = 0; i < locals.error_msg; i++) {%>
+        <div style="height: 20px; width: 70%; margin: .8px auto .8px auto; background-color: indianred; text-align: center;"><p><%= locals.error_msg[i] %></p></div>
+        <% } %>
+        <% } %>
+    <div class="card mt-5">
+        <div class="card-body">
+            <form action="/api/login" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Add your username" class="form-control" id="user">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="Add your password" class="form-control" id="password">
+                </div>
+                <button type="submit" class="btn btn-md btn-primary utto" id="utto">
+                    Login
+                </button>
+                <a href="/api/home" class="btn btn-md btn-danger">
+                    Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+    <p>Don't you have an account? <a href="/api/register">Go and create one</a></p>
+</div>
+
+<%- include ('./partials/Outfooter') %>

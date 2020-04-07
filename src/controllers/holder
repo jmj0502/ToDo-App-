@@ -1,0 +1,28 @@
+//here we are going to set up our auth strategy for the register route.
+passport.use('local-register', new localStrategy ({
+    usernameField: 'username',
+    passwordField:  'password',
+    passReqToCallback: true
+}, async (req, username, password, done) => {
+        const repeatPassword = req.body.repeatPassword;
+    try {
+        const user = await User.findOne({'username': username});
+        console.log(user);
+        if (user) {
+            return done(null, false, req.flash('error_msg', 'That username is alredy in use!'));
+        } else {
+            user.username = username;
+            user.password = password;
+            if (user.password !== repeatPassword) {
+                return done(null, false, req.flash('error_msg', 'Passwords don\'t match!'));
+            }
+            if (user.password < 4) {
+                return done(null, false, req.flash('error_msg', 'Password must be over 4 characters!'));
+            }
+            console.log(user);
+            done(null, user);
+        }
+    } catch (err) {
+        console.log(err);
+    }
+}));
