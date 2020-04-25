@@ -8,6 +8,9 @@ const flash = require('connect-flash');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 
+//here we are running dotenv.
+require('dotenv').config();
+
 //requiring our passport configuration file.
 require('./passport/local-auth');
 
@@ -25,7 +28,7 @@ app.use(express.json());
 app.use(methodOverride('__method'));
 app.use(morgan('dev'));
 app.use(session({
-    secret: 'mysecretsession',
+    secret: process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: false
 }));

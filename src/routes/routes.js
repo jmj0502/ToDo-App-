@@ -13,7 +13,7 @@ const helper = require('../helpers/helper');
 //creating our routes.
 
 //our home page.
-router.get('/api/home', userCtrl.renderHome);
+router.get('/', userCtrl.renderHome);
 
 //our register routes.
 router.get('/api/register', userCtrl.renderRegisterForm);

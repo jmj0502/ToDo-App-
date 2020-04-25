@@ -21,7 +21,7 @@ userCtrl.register = async (req, res) => {
         let errors = [];
         const data = req.body;
         console.log(data);
-        if (!data.username || !data.password || data.firstName || data.lastName) {
+        if (!data.username || !data.password || !data.firstName || !data.lastName) {
             errors.push('You must fill every field!');
             res.render('registerform', {
                 error: errors

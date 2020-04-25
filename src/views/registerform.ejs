@@ -3,7 +3,7 @@
 <div class="form-wraper container mt-7">
    <%if (error) {%>
     <% for (var i = 0; i < error.length; i++) {%>
-    <div style="height: 43px; width: 70%; margin: .8px auto .8px auto; background-color: indianred; text-align: center; color: white; border-radius: 5px; text-align: center; font-size: .9em; justify-content: center; padding-bottom: 20px;><p><%= error[i] %></p></div>
+    <div style="height: 43px; width: 70%; margin: .8px auto .8px auto; background-color: indianred; text-align: center; color: white; border-radius: 5px; text-align: center; font-size: .9em; justify-content: center; padding-bottom: 20px;"><p><%= error[i] %></p></div>
     <% } %>
     <% } %>
         <div class="card mt-3">
@@ -36,7 +36,7 @@
                     <button type="submit" class="btn btn-md btn-primary">
                         Register
                     </button>
-                    <a href="/api/home" class="btn btn-md btn-danger">
+                    <a href="/" class="btn btn-md btn-danger">
                         Cancel
                     </a>
                 </form>

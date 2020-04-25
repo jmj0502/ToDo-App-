@@ -2,12 +2,12 @@
 
 
 
-<div>
+<div style="display: flex; flex-wrap: wrap; flex-direction: row;">
     <div style=" margin-left: 0; display: flex; justify-content: space-around; height: 100%;">
-        <div style="display: flex; flex-direction: row;flex-wrap: wrap; justify-content: space-around; width: 70%; height: 800px; margin-left: 0; margin: 1.1em; padding-right: 3em; padding-left: 3em; ">
+        <div style="display: flex; flex-direction: row;flex-wrap: wrap; justify-content: space-around; width: 70%; height: 50em; margin-left: 0; margin: 1.1em; padding-right: 3em; padding-left: 3em; ">
             <% if (data) {%>
                 <% for (var i = 0; i < data.length; i++) { %> 
-                <div class="card mt-3" style="width: 22%; height: 24em; margin: .8em;">
+                <div class="card mt-3" style="width: 30%; height: 28em; margin: .8em;">
                     <div class="card-body">
                         <label style="font-size: .9em;">Title</label>
                         <h6><%= data[i].title %></h6>
@@ -34,7 +34,7 @@
 
         <div style="padding-left: 3em; padding-right: 3em; width: 40%; margin-right: 3em; margin-top: 2em; ">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body" style>
                     <form action="/api/tasks" method="POST">
                         <div class="form-group">
                             <label for="title">Title</label>
