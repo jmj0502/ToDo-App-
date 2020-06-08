@@ -1,34 +1,39 @@
 <%- include ('./partials/Innerheader') %>
 
-<div class="" style="padding-left: 3em; padding-right: 3em; width: 40%; margin-right: 3em; margin-top: 2em; ">
-    <div class="card">
-        <div class="card-body">
-            <form action="/api/updateTask/<%= data.id %>" method="POST">
-                <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" name="title" value="<%= data.title %>" placeholder="Add the tittle of your task" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="startingDate">Starting date</label>
-                    <input type="text" name="startingDate" value="<%= data.startingDate %>" placeholder="When are going to start working on it?" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="deadline">Deadline</label>
-                    <input type="text" name="deadline" value="<%= data.deadline %>" placeholder="Add your deadline" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea type="text" name="description" value="<%= data.description %>" placeholder="Add the description of your task!" class="form-control"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">
-                    Update Task
-                </button>
-            </form>
+<div class="row">
+    <div class="col-md-5 mt-3 d-flex justify-content-center aling-self-center">
+        <div class="card">
+            <div class="card-body">
+                <form action="/api/updateTask/<%= data.id %>" method="POST">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" value="<%= data.title %>"
+                            placeholder="Add the tittle of your task" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="startingDate">Starting date</label>
+                        <input type="text" name="startingDate" value="<%= data.startingDate %>"
+                            placeholder="When are going to start working on it?" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline">Deadline</label>
+                        <input type="text" name="deadline" value="<%= data.deadline %>" placeholder="Add your deadline"
+                            class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea type="text" name="description" value="<%= data.description %>"
+                            placeholder="Add the description of your task!" class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Update Task
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-</div>
-</div>
+
 
 
 <%- include ('./partials/Outfooter') %>
