@@ -2,9 +2,8 @@
 
 
 
-<div style="display: flex; flex-wrap: wrap; flex-direction: row;">
-    <div style=" margin-left: 0; display: flex; justify-content: space-around; height: 100%;">
-        <div style="display: flex; flex-direction: row;flex-wrap: wrap; justify-content: space-around; width: 70%; height: 50em; margin-left: 0; margin: 1.1em; padding-right: 3em; padding-left: 3em; ">
+<div class="row">
+        <div class="col-md-7 d-flex justify-content-around flex-wrap">
             <% if (data) {%>
                 <% for (var i = 0; i < data.length; i++) { %> 
                 <div class="card mt-3" style="width: 30%; height: 28em; margin: .8em;">
@@ -32,7 +31,7 @@
     
 
 
-        <div style="padding-left: 3em; padding-right: 3em; width: 40%; margin-right: 3em; margin-top: 2em; ">
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-body" style>
                     <form action="/api/tasks" method="POST">
@@ -59,7 +58,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>
 
 <%- include ('./partials/Outfooter') %>
