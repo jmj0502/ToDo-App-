@@ -74,11 +74,10 @@ userCtrl.renderLoginForm = (req, res) => {
 };
 
 //here we are going to setup our auth for some routes.
-userCtrl.login = passport.authenticate('local',{
-    successRedirect: '/api/tasks',
-    failureRedirect: '/api/login',
-    failureFlash: true
-}), (req, res) => {
+userCtrl.login = (
+    req,
+    res
+) => {
     console.log(req.body);
 };
 //here we are going to setup our logout method.

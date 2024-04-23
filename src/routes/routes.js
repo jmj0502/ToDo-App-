@@ -2,6 +2,7 @@
 const router = require('express').Router({
     mergeParams: true
 });
+require('../passport/local-auth');
 
 //here we are going to import our other modules.
 const userCtrl = require('../controllers/userController');
@@ -21,7 +22,11 @@ router.post('/api/register', userCtrl.register);
 
 //our login routes.
 router.get('/api/login', userCtrl.renderLoginForm);
-router.post('/api/login', userCtrl.login);
+router.post('/api/login', passport.authenticate('local',{
+    successRedirect: '/api/tasks',
+    failureRedirect: '/api/login',
+    failureFlash: true
+}), userCtrl.login);
 
 //logout route.
 router.get('/api/logout', userCtrl.logOut);

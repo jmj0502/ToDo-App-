@@ -1,5 +1,5 @@
 //here we are going to setup the controller for our tasks.
-taskCtrl = {};
+const taskCtrl = {};
 
 //here we require our task module.
 const Task = require('../models/task');

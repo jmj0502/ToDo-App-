@@ -12,5 +12,3 @@ mongoose.connect(process.env.DB_URI, {
 
 //Setting a little mongoose config that will allow us to user certain methods.
 mongoose.set('useFindAndModify', false);
-
-//"mongodb+srv://mainUser:27676046M$@cluster0-77p3o.gcp.mongodb.net/test?retryWrites=true&w=majority"
